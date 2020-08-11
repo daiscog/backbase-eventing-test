@@ -1,0 +1,32 @@
+server:
+  port: 9915
+
+# API Registry client configuration
+eureka:
+  client:
+    enabled: false
+
+# Configure Internal JWT handler
+sso:
+  jwt:
+    internal:
+      signature:
+        key:
+          type: ENV
+          value: SIG_SECRET_KEY
+
+# Spring health monitoring
+management:
+  health:
+    jms:
+     enabled: false
+
+backbase:
+  security:
+    public:
+      paths: /**
+
+buildingblocks:
+  security:
+    xss:
+      autoconfig: false

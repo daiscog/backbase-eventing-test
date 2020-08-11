@@ -1,0 +1,34 @@
+server:
+  port: 9916
+
+# API Registry client configuration
+eureka:
+  client:
+    enabled: false
+
+# Configure Internal JWT handler
+sso:
+  jwt:
+    internal:
+      signature:
+        key:
+          type: ENV
+          value: SIG_SECRET_KEY
+
+# Spring health monitoring
+management:
+  health:
+    jms:
+     enabled: false
+
+logging:
+  level:
+    com.backbase.mytest: debug
+
+spring:
+  cloud:
+    stream:
+      jms:
+        bindings[com.backbase.service.example.event.spec.v1.TestEvent]:
+          consumer:
+            dlqName: custom.test-event.dlq

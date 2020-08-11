@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "destination": "test-events",
+  "type": "object",
+  "properties": {
+    "data": {
+      "description": "Arbitrary message",
+      "type": "string"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}
