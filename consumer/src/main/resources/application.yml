@@ -31,4 +31,7 @@ spring:
       jms:
         bindings[com.backbase.service.example.event.spec.v1.TestEvent]:
           consumer:
-            dlqName: custom.test-event.dlq
+            dlq-name: custom.test-event.dlq
+      bindings[com.backbase.service.example.event.spec.v1.TestEvent]:
+        consumer:
+          max-attempts: 5
